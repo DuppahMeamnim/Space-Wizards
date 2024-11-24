@@ -656,7 +656,7 @@ MonoBehaviour:
   detectionRange: 5
   moveSpeed: 3
   attackRange: 2
-  attackCooldown: 2
+  attackCooldown: 1
 --- !u!212 &1866465128
 SpriteRenderer:
   m_ObjectHideFlags: 0

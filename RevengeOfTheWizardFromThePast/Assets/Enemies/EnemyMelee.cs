@@ -47,7 +47,10 @@ public class EnemyMelee : MonoBehaviour
 
     private void ChasePlayer()
     {
-        agent.SetDestination(playerTransform.position);
+        if (Time.time >= attackTime)
+        {
+            agent.SetDestination(playerTransform.position);
+        }
     }
 
     private void Attack()
