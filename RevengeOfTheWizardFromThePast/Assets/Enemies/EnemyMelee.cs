@@ -8,7 +8,10 @@ public class EnemyMelee : MonoBehaviour
     [SerializeField] private float moveSpeed = 3f;
     [SerializeField] private float attackRange = 3f;
     [SerializeField] private float attackCooldown = 3f;
+    [SerializeField] private float maxHealth = 100f;
 
+
+    private float currentHealth;
     private Transform playerTransform;
     private NavMeshAgent agent;
     private float attackTime;
@@ -35,12 +38,9 @@ public class EnemyMelee : MonoBehaviour
                 agent.ResetPath();
                 Attack();
             }
-
+            else if (distanceToPlayer <= detectionRange)
             {
-                if (distanceToPlayer <= detectionRange)
-                {
-                    ChasePlayer();
-                }
+                ChasePlayer();
             }
         }
     }
@@ -81,6 +81,20 @@ public class EnemyMelee : MonoBehaviour
             print("attack");
             attackTime = Time.time + attackCooldown;
         }
+    }
+
+    public void TakeDamage(float damage)
+    {
+        currentHealth -= damage;
+        if (currentHealth <= 0)
+        {
+            Death();
+        }
+    }
+
+    private void Death()
+    {
+        Destroy(gameObject);
     }
 
     private void OnDrawGizmos()
