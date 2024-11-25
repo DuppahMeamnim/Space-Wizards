@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -13,6 +12,7 @@ public class EnemyMelee : MonoBehaviour
     private Transform playerTransform;
     private NavMeshAgent agent;
     private float attackTime;
+    private bool hasLineOfSight = false;
 
     private void Awake()
     {
@@ -28,21 +28,40 @@ public class EnemyMelee : MonoBehaviour
     {
         float distanceToPlayer = Vector2.Distance(transform.position, playerTransform.position);
 
-        if (distanceToPlayer <= attackRange)
+        if (hasLineOfSight)
         {
-            agent.ResetPath();
+            if (distanceToPlayer <= attackRange)
+            {
+                agent.ResetPath();
+                Attack();
+            }
 
-            Attack();
+            {
+                if (distanceToPlayer <= detectionRange)
+                {
+                    ChasePlayer();
+                }
+            }
         }
-        else
+    }
+
+    private void FixedUpdate()
+    {
+        Vector2 directionToPlayer = playerTransform.position - transform.position;
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, directionToPlayer);
+
+        if (hit.collider != null)
         {
-            ChasePlayer();
+            hasLineOfSight = hit.collider.CompareTag("Player");
+            if (hasLineOfSight)
+            {
+                Debug.DrawRay(transform.position, directionToPlayer, Color.green);
+            }
+            else
+            {
+                Debug.DrawRay(transform.position, directionToPlayer, Color.red);
+            }
         }
-        // float distanceToPlayer = Vector2.Distance(transform.position, player.position);
-
-        // if (distanceToPlayer <= detectionRange)
-        // {
-        // }
     }
 
     private void ChasePlayer()
@@ -66,6 +85,8 @@ public class EnemyMelee : MonoBehaviour
 
     private void OnDrawGizmos()
     {
+        if (!Application.isPlaying || playerTransform == null) return;
+
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackRange);
 
