@@ -1,9 +1,7 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
 {
-
     [Header("Movement")]
     [SerializeField] private float walkSpeed = 20.0f;
     [SerializeField] private float acceleration = 4000.0f;
