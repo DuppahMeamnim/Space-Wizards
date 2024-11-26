@@ -6,7 +6,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float walkSpeed = 20.0f;
     [SerializeField] private float acceleration = 4000.0f;
     [SerializeField] private float deceleration = 10000.0f;
-    //Sprint??
 
     private Rigidbody2D rb;
     private PlayerInputHandler inputHandler;
@@ -34,6 +33,5 @@ public class PlayerController : MonoBehaviour
         Vector2 movementForce = velocityChange * rate * Time.fixedDeltaTime;
 
         rb.AddForce(movementForce, ForceMode2D.Force);
-        rb.linearVelocity = Vector2.ClampMagnitude(rb.linearVelocity, walkSpeed);
     }
 }
