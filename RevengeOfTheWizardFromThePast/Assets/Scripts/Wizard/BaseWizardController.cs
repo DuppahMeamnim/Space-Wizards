@@ -12,7 +12,6 @@ public class BaseWizardController : MonoBehaviour
     const string WIZARD_IDLE = "Wizard_idle";
     const string WIZARD_RUN = "Wizard_run";
 
-
     private Rigidbody2D rb;
     private Animator animator;
     private WizardInputHandler inputHandler;
