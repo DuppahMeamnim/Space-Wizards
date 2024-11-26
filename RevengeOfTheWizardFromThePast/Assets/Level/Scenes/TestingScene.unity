@@ -219,6 +219,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2098122247103919219, guid: 5cc369a1dfe58724e94a72514e2d1085, type: 3}
+      propertyPath: walkSpeed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2098122247103919219, guid: 5cc369a1dfe58724e94a72514e2d1085, type: 3}
+      propertyPath: acceleration
+      value: 4000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2098122247103919219, guid: 5cc369a1dfe58724e94a72514e2d1085, type: 3}
+      propertyPath: deceleration
+      value: 10000
+      objectReference: {fileID: 0}
     - target: {fileID: 4049117850326129482, guid: 5cc369a1dfe58724e94a72514e2d1085, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -262,6 +274,10 @@ PrefabInstance:
     - target: {fileID: 5482264117697074482, guid: 5cc369a1dfe58724e94a72514e2d1085, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6920869498196665597, guid: 5cc369a1dfe58724e94a72514e2d1085, type: 3}
+      propertyPath: m_Mass
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

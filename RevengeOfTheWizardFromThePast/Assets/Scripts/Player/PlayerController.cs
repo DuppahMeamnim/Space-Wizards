@@ -1,10 +1,14 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
 {
-    [Header("Movement Speeds")]
-    [SerializeField] private float walkSpeed = 7.0f;
-    //sprint??
+
+    [Header("Movement")]
+    [SerializeField] private float walkSpeed = 20.0f;
+    [SerializeField] private float acceleration = 4000.0f;
+    [SerializeField] private float deceleration = 10000.0f;
+    //Sprint??
 
     private Rigidbody2D rb;
     private PlayerInputHandler inputHandler;
@@ -13,6 +17,7 @@ public class PlayerController : MonoBehaviour
     {
         inputHandler = GetComponent<PlayerInputHandler>();
         rb = GetComponent<Rigidbody2D>();
+        rb.gravityScale = 0;
         rb.linearDamping = 0;
     }
 
@@ -24,8 +29,13 @@ public class PlayerController : MonoBehaviour
     private void HandleMovement()
     {
         Vector2 input = inputHandler.MoveInput;
+        Vector2 targetVelocity = input * walkSpeed;
 
-        rb.linearVelocity = input.normalized * walkSpeed;
-        //linear velocity for now because force will push the hell out of the player.
+        Vector2 velocityChange = targetVelocity - rb.linearVelocity;
+        float rate = input.magnitude > 0 ? acceleration : deceleration;
+        Vector2 movementForce = velocityChange * rate * Time.fixedDeltaTime;
+
+        rb.AddForce(movementForce, ForceMode2D.Force);
+        rb.linearVelocity = Vector2.ClampMagnitude(rb.linearVelocity, walkSpeed);
     }
 }
