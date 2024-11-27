@@ -8,16 +8,6 @@ public class RoomStart : MonoBehaviour
     public Tilemap[] doorsTilemaps;
     private bool isActive = false;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -26,8 +16,6 @@ public class RoomStart : MonoBehaviour
             SetLayerOrder();
             isActive = true;
         }
-
-        print("start room");
     }
 
     private void SetLayerOrder()
