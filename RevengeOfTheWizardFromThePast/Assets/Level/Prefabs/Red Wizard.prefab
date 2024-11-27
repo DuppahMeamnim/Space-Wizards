@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 2098122247103919219}
   - component: {fileID: 126832023011616261}
   - component: {fileID: 6920869498196665597}
+  - component: {fileID: 3858961186961316032}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Red Wizard
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79,9 +80,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
+  m_Sprite: {fileID: 8156224475095734469, guid: eb9ea995a2bf3a641ab4d9b897339fa5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 2}
@@ -105,6 +106,7 @@ MonoBehaviour:
   walkSpeed: 7
   acceleration: 10000
   deceleration: 12000
+  currentState: 
 --- !u!114 &126832023011616261
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117,8 +119,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5358ee6567abdff458879db6e47c4d04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerControls: {fileID: -944628639613478452, guid: 2ff9a47d60b5d5b41a0f6fe1307f2634, type: 3}
-  actionMapName: Player
+  wizardControls: {fileID: -944628639613478452, guid: 2ff9a47d60b5d5b41a0f6fe1307f2634, type: 3}
+  actionMapName: Wizard
   move: Move
 --- !u!50 &6920869498196665597
 Rigidbody2D:
@@ -147,3 +149,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!95 &3858961186961316032
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5482264117697074482}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 958e575ae78ad4f4eaeefe1b8574a2a0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

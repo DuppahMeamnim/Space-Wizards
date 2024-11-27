@@ -1,8 +1,8 @@
 {
-    "name": "PlayerInputActions",
+    "name": "WizardInputActions",
     "maps": [
         {
-            "name": "Player",
+            "name": "Wizard",
             "id": "ff2730e5-ff75-4935-9d6e-f21bf4b6bddc",
             "actions": [
                 {
