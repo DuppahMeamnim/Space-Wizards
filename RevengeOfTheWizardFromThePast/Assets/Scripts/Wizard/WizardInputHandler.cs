@@ -1,14 +1,14 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerInputHandler : MonoBehaviour
+public class WizardInputHandler : MonoBehaviour
 {
 
     [Header("Input Action Asset")]
-    [SerializeField] private InputActionAsset playerControls;
+    [SerializeField] private InputActionAsset wizardControls;
 
     [Header("Action Map Name References")]
-    [SerializeField] private string actionMapName = "Player";
+    [SerializeField] private string actionMapName = "Wizard";
 
     [Header("Action Name References")]
     [SerializeField] private string move = "Move";
@@ -17,7 +17,7 @@ public class PlayerInputHandler : MonoBehaviour
 
     public Vector2 MoveInput { get; private set; }
 
-    public static PlayerInputHandler Instance { get; private set; }
+    public static WizardInputHandler Instance { get; private set; }
 
     private void Awake()
     {
@@ -31,7 +31,7 @@ public class PlayerInputHandler : MonoBehaviour
             Destroy(gameObject);
         }
 
-        moveAction = playerControls.FindActionMap(actionMapName).FindAction(move);
+        moveAction = wizardControls.FindActionMap(actionMapName).FindAction(move);
 
         RegisterInputActions();
     }
