@@ -3,15 +3,14 @@ using UnityEngine.InputSystem;
 
 public class WizardInputHandler : MonoBehaviour
 {
+    [Header("Input Action Asset")] [SerializeField]
+    private InputActionAsset wizardControls;
 
-    [Header("Input Action Asset")]
-    [SerializeField] private InputActionAsset wizardControls;
+    [Header("Action Map Name References")] [SerializeField]
+    private string actionMapName = "Wizard";
 
-    [Header("Action Map Name References")]
-    [SerializeField] private string actionMapName = "Wizard";
-
-    [Header("Action Name References")]
-    [SerializeField] private string move = "Move";
+    [Header("Action Name References")] [SerializeField]
+    private string move = "Move";
 
     private InputAction moveAction;
 
@@ -24,7 +23,6 @@ public class WizardInputHandler : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -35,6 +33,7 @@ public class WizardInputHandler : MonoBehaviour
 
         RegisterInputActions();
     }
+
     void RegisterInputActions()
     {
         moveAction.performed += context => MoveInput = context.ReadValue<Vector2>();
@@ -43,7 +42,7 @@ public class WizardInputHandler : MonoBehaviour
 
     private void OnEnable()
     {
-        moveAction.Enable();  
+        moveAction.Enable();
     }
 
     private void OnDisable()

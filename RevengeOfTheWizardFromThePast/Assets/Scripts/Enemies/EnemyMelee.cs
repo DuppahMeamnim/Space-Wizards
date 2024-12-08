@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -7,8 +8,10 @@ public class EnemyMelee : MonoBehaviour
     [SerializeField] private float detectionRange = 5f;
     [SerializeField] private float moveSpeed = 3f;
     [SerializeField] private float attackRange = 3f;
+    [SerializeField] private float attackDuration = 0.5f;
     [SerializeField] private float attackCooldown = 3f;
     [SerializeField] private float maxHealth = 100f;
+    [SerializeField] private AttackArea attackArea;
 
 
     private float currentHealth;
@@ -25,6 +28,8 @@ public class EnemyMelee : MonoBehaviour
         agent.speed = moveSpeed;
         agent.updateRotation = false;
         agent.updateUpAxis = false;
+
+        attackArea.gameObject.SetActive(false);
     }
 
     private void Update()
@@ -78,9 +83,21 @@ public class EnemyMelee : MonoBehaviour
 
         if (Time.time >= attackTime)
         {
-            print("attack");
+            Vector2 directionToPlayer = (playerTransform.position - transform.position).normalized;
+
+            float angle = Mathf.Atan2(directionToPlayer.y, directionToPlayer.x) * Mathf.Rad2Deg;
+            attackArea.transform.rotation = Quaternion.Euler(0, 0, angle);
+
+            attackArea.gameObject.SetActive(true);
+            StartCoroutine(DeactivateAttackArea());
             attackTime = Time.time + attackCooldown;
         }
+    }
+
+    private IEnumerator DeactivateAttackArea()
+    {
+        yield return new WaitForSeconds(attackDuration);
+        attackArea.gameObject.SetActive(false);
     }
 
     public void TakeDamage(float damage)
