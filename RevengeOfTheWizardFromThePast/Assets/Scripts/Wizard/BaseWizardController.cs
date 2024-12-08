@@ -20,7 +20,7 @@ public class BaseWizardController : MonoBehaviour
     {
         inputHandler = GetComponent<WizardInputHandler>();
         rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
+        animator = GetComponentInChildren<Animator>();
         rb.gravityScale = 0;
         rb.linearDamping = 0;
     }

@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 87ebbdfb47f8147458067b0a9ecc0c01
+guid: 36c45525236dc8a409978dbe01c6809b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7616202458310998786
-    second: WizardRun_0
+      213: 6716298796971304830
+    second: WizardRun 1_0
   - first:
-      213: -2267550260124684433
-    second: WizardRun_1
+      213: 757354856793827037
+    second: WizardRun 1_1
   - first:
-      213: 675016621643389081
-    second: WizardRun_2
+      213: -3647420586448985652
+    second: WizardRun 1_2
   - first:
-      213: 3600160069846705452
-    second: WizardRun_3
+      213: 2405277882557048453
+    second: WizardRun 1_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -84,7 +84,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -114,18 +114,18 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 320
-        height: 320
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: ef48aee6730dd4690800000000000000
-      internalID: -7616202458310998786
+      spriteID: 3abb84927131e4a4cab9ebd2fd3a94e3
+      internalID: 2011273683
       vertices: []
       indices: 
       edges: []
@@ -134,20 +134,20 @@ TextureImporter:
       name: WizardRun_1
       rect:
         serializedVersion: 2
-        x: 320
+        x: 32
         y: 0
-        width: 320
-        height: 320
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: f6f6cea6d0b0880e0800000000000000
-      internalID: -2267550260124684433
+      spriteID: 6c5f786362676a44ba08ef26e267ccfd
+      internalID: -1819561239
       vertices: []
       indices: 
       edges: []
@@ -156,20 +156,20 @@ TextureImporter:
       name: WizardRun_2
       rect:
         serializedVersion: 2
-        x: 640
+        x: 64
         y: 0
-        width: 320
-        height: 320
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 998d98e7a042e5900800000000000000
-      internalID: 675016621643389081
+      spriteID: 99599fa59073559419528bb9e2cca165
+      internalID: -599624121
       vertices: []
       indices: 
       edges: []
@@ -178,20 +178,20 @@ TextureImporter:
       name: WizardRun_3
       rect:
         serializedVersion: 2
-        x: 960
+        x: 96
         y: 0
-        width: 320
-        height: 320
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: c2522c1528656f130800000000000000
-      internalID: 3600160069846705452
+      spriteID: 24214806eec149149b6c70de03002893
+      internalID: -1151458231
       vertices: []
       indices: 
       edges: []
@@ -200,7 +200,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 07e74d81bef96d84d8aeda3fe1ab2ee2
+    spriteID: 624fd38dd4d6fe3469126e88e41e6d98
     internalID: 0
     vertices: []
     indices: 
@@ -210,10 +210,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      WizardRun_0: -7616202458310998786
-      WizardRun_1: -2267550260124684433
-      WizardRun_2: 675016621643389081
-      WizardRun_3: 3600160069846705452
+      WizardRun_0: 2011273683
+      WizardRun_1: -1819561239
+      WizardRun_2: -599624121
+      WizardRun_3: -1151458231
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

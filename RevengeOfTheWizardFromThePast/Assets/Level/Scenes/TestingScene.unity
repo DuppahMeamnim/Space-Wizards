@@ -259,10 +259,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4129561850604190017, guid: 5cc369a1dfe58724e94a72514e2d1085, type: 3}
-      propertyPath: m_FlipX
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5482264117697074482, guid: 5cc369a1dfe58724e94a72514e2d1085, type: 3}
       propertyPath: m_Name
       value: Red Wizard
